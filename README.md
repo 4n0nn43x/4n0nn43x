@@ -48,11 +48,11 @@ I'm always exploring innovative technologies like **blockchain**, **AI integrati
 ## 📈 GitHub Stats
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Naesmal&show_icons=true&theme=tokyonight" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api?username=4n0nn43x&show_icons=true&theme=tokyonight" alt="GitHub Stats" />
 </div>
 
 <div align="center">
-  <img src="https://streak-stats.demolab.com?user=Naesmal&theme=tokyonight&border_radius=5)" alt="Github Streaks" />
+  <img src="https://streak-stats.demolab.com?user=4n0nn43x&theme=tokyonight&border_radius=5)" alt="Github Streaks" />
 </div>
 
 ---
@@ -60,7 +60,7 @@ I'm always exploring innovative technologies like **blockchain**, **AI integrati
 ## 💻 Most Used Languages
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Naesmal&layout=compact&theme=tokyonight" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=4n0nn43x&layout=compact&theme=tokyonight" alt="Top Languages" />
 </div>
 
 ---
@@ -68,7 +68,7 @@ I'm always exploring innovative technologies like **blockchain**, **AI integrati
 ## 🌐 Let's Connect
 
 <div align="center">
-  <!-- <a href="https://www.linkedin.com/in/Naesmal/">
+  <!-- <a href="https://www.linkedin.com/in/4n0nn43x/">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a> -->
   <a href="https://twitter.com/0x___eth">
@@ -80,10 +80,10 @@ I'm always exploring innovative technologies like **blockchain**, **AI integrati
   <a href="https://wa.me/+22954652693">
     <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp" />
   </a>
-  <a href="https://discordapp.com/users/naesmal">
+  <a href="https://discordapp.com/users/4n0nn43x">
     <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
   </a>
- <!-- <a href="https://dev.to/Naesmal">
+ <!-- <a href="https://dev.to/4n0nn43x">
     <img src="https://img.shields.io/badge/Dev.to-0A0A0A?style=for-the-badge&logo=dev.to&logoColor=white" alt="Dev.to" />
   </a> -->
   <a href="mailto:seannolwenhnt@gmail.com">
@@ -92,7 +92,7 @@ I'm always exploring innovative technologies like **blockchain**, **AI integrati
 </div>
 
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=Naesmal&color=blueviolet&style=flat-square&label=Profile+Views" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=4n0nn43x&color=blueviolet&style=flat-square&label=Profile+Views" alt="Profile Views" />
 </div>
 
 ---
