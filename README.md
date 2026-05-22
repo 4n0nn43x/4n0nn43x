@@ -1,102 +1,49 @@
-# Welcome to My GitHub Profile! 👋
+## Nolwen Sean Hononta
 
-<div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=32&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=500&lines=Full-Stack+Developer;Bot+Maker;Chrome+Extensions;Blockchain+%26+AI+Explorer;Tech+Problem+Solver;Always+Learning..." alt="Typing SVG" />
-</div>
+Engineer working on AI agents, on-chain systems, and infrastructure
+where the two meet. Solo builds, production deploys, hackathon shipping.
 
----
+### Stack
 
-## ✨ About Me
+**Languages** — TypeScript, Python, Rust, JavaScript, PHP
+**On-chain** — Anchor/Solana, EVM (Cronos, Base, HashKey), ethers.js, viem
+**AI** — LangChain, ChromaDB, RAG pipelines, multi-agent orchestration, MCP servers
+**Backend** — Node.js, FastAPI, Express, PostgreSQL, SQLite, MongoDB
+**Infra** — Docker, Nginx, Cloudflare, Vercel, Linux
 
-I'm **Nolwen Sean**, a passionate full-stack developer and creative technologist.  
-I specialize in crafting bots, Chrome extensions, and microservices that solve real-world problems.
+### Selected work
 
-I'm always exploring innovative technologies like **blockchain**, **AI integrations**, and scalable **automation tools** — with a focus on **freelancer productivity**, **digital products**, and **e-commerce**.
+**[Meridian](https://github.com/4n0nn43x/meridian)** — On-chain corporate treasury on Solana.
+Anchor program with 7 instructions, atomic FX via Jupiter Ultra, Pyth oracle slippage
+verification, auto-sweep into Kamino vaults, Squads V4 multisig, on-chain sanction
+screening. Deployed devnet `4Gmos18pj8Rt4oGn1npoVX5bJmxkkEpwomcGR86QPokZ`. Rust + TS.
 
-<img align="right" alt="Coding" width="400" src="https://github.com/abhisheknaiidu/abhisheknaiidu/blob/master/code.gif?raw=true">
+**[AgentForge](https://github.com/4n0nn43x/agent-forge)** — No-code RAG platform.
+FastAPI + LangChain + ChromaDB, public REST API with key-scoped rate limits, vanilla-JS
+embeddable widget, HMAC-SHA256 webhooks with exponential-backoff retry. Winner,
+DoraHacks × NodeOps Proof of Build hackathon.
 
-- 🔭 Currently building tools for:
-  - AI-driven product trend monitoring
-  - Telegram crypto trackers
-- 🧠 Exploring DeFi, Smart Contracts, Subnet architecture, and prompt engineering
-- 💼 Active on **ComeUp** as a freelance dev for landing pages, bots, and automations
-- 💬 Let’s talk tech, startups, innovation, or the future of AI
-- 🍳 Fun fact: I'm probably cooking or hiking when I'm not coding
+**[NeuroBase](https://github.com/4n0nn43x/neurobase)** — Natural language → verified SQL.
+Multi-agent pipeline across Postgres / MySQL / SQLite / MongoDB. Permission ladder,
+per-query cost tracking, zero `.env` config. Same prompt, four dialects.
 
----
+**[Aether SDK](https://github.com/AETHER-SDK/aether-sdk)** — Autonomous agent payments.
+Production TypeScript SDK letting AI agents negotiate and settle micropayments on Solana
+via the x402 protocol. Founder. Ecosystem includes PayGate (content monetization) and
+an agent-to-agent marketplace.
 
-## 🛠️ Tech Stack
+**[WA-Tunnel](https://github.com/4n0nn43x/wa-tunnel)** — TCP tunneling over WhatsApp.
+TypeScript tool that chunks and brotli-compresses arbitrary TCP traffic through WhatsApp
+messages (6-8× message reduction), enabling network access on zero-rated or restricted
+carriers. Baileys v7 WebSocket, multi-client server mode, companion VPN app.
 
-<div align="center">
-  <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" />
-  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" />
-  <img src="https://img.shields.io/badge/Chrome%20Extensions-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white" />
-  <img src="https://img.shields.io/badge/Telegram%20Bots-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" />
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
-  <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" />
-  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
-  <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" />
-  <img src="https://img.shields.io/badge/Parrot%20OS-0052CC?style=for-the-badge&logo=linux&logoColor=white" />
-</div>
+Other repos worth a look: [Cortex402](https://github.com/4n0nn43x/cortex402) (x402 agentic
+finance on Cronos), [Bittensor Subnet 42 MCP](https://github.com/4n0nn43x/Bittensor-Subnet-42-MCP)
+(Masa + Taostats data via MCP), [Bitsec AutoReporter](https://github.com/4n0nn43x/Bitsec-AutoReporter-AI)
+(consensus-based vulnerability reporting for the Bitsec subnet).
 
----
+### Contact
 
-## 📈 GitHub Stats
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=4n0nn43x&show_icons=true&theme=tokyonight" alt="GitHub Stats" />
-</div>
-
-<div align="center">
-  <img src="https://streak-stats.demolab.com?user=4n0nn43x&theme=tokyonight&border_radius=5)" alt="Github Streaks" />
-</div>
-
----
-
-## 💻 Most Used Languages
-
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=4n0nn43x&layout=compact&theme=tokyonight" alt="Top Languages" />
-</div>
-
----
-
-## 🌐 Let's Connect
-
-<div align="center">
-  <!-- <a href="https://www.linkedin.com/in/4n0nn43x/">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a> -->
-  <a href="https://twitter.com/0x___eth">
-    <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter" />
-  </a>
-  <!-- <a href="https://t.me/VOTRE_USERNAME">
-    <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" />
-  </a> -->
-  <!-- <a href="https://wa.me/+22954652693">
-    <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp" />
-  </a> -->
-  <a href="https://discordapp.com/users/4n0nn43x">
-    <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
-  </a>
- <!-- <a href="https://dev.to/4n0nn43x">
-    <img src="https://img.shields.io/badge/Dev.to-0A0A0A?style=for-the-badge&logo=dev.to&logoColor=white" alt="Dev.to" />
-  </a> -->
-  <a href="mailto:seanmalelant@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-</div>
-
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=4n0nn43x&color=blueviolet&style=flat-square&label=Profile+Views" alt="Profile Views" />
-</div>
-
----
-
-<div align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" alt="Random Dev Quote" />
-</div>
+- [nolwenhononta.cloud](https://nolwenhononta.cloud)
+- anonnaes@proton.me · seanmalelant@gmail.com
+- [@0x___eth](https://x.com/0x___eth) · [Telegram](https://t.me/Oracle_overflow)
