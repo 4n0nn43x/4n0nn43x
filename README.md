@@ -34,11 +34,6 @@ FastAPI, LangChain and ChromaDB behind a public REST API with key-scoped rate li
 embeddable vanilla-JS widget, and HMAC-SHA256 webhooks with exponential-backoff retry.
 Winner of the DoraHacks × NodeOps Proof of Build hackathon.
 
-**[Meridian](https://github.com/4n0nn43x/meridian)** — Onchain corporate treasury on Solana.
-An Anchor program with seven instructions: atomic FX through Jupiter Ultra, Pyth oracle
-slippage verification, auto-sweep into Kamino vaults, Squads V4 multisig, onchain sanction
-screening.
-
 **[NeuroBase](https://github.com/4n0nn43x/neurobase)** — Natural language to verified SQL,
 across Postgres, MySQL, SQLite and MongoDB. Permission ladder, per-query cost tracking, and
 no `.env` to fill in. Same prompt, four dialects.
@@ -54,7 +49,7 @@ message reduction, so a zero-rated or restricted carrier still gives you a netwo
 | | |
 | :-- | :-- |
 | **Languages** | TypeScript, Python, Rust, Solidity |
-| **Onchain** | EVM (Base, Cronos, HashKey), Anchor/Solana, viem, ethers, Foundry |
+| **Onchain** | EVM (Base, HashKey), Solana, viem, ethers, Foundry, Anchor |
 | **Agent rails** | x402 v2, MPP, ERC-8004, MCP servers, LangChain, CrewAI |
 | **Backend** | Node.js, FastAPI, Express, PostgreSQL, ChromaDB |
 | **Supply chain** | cosign keyless signing, CycloneDX SBOM, provenance attestation, GHCR |
@@ -113,11 +108,6 @@ projects:
     stack: [FastAPI, LangChain, ChromaDB]
     result: winner, DoraHacks x NodeOps Proof of Build hackathon
     url: https://github.com/4n0nn43x/agent-forge
-
-  - name: Meridian
-    what: onchain corporate treasury on Solana
-    stack: [Anchor, Rust, Jupiter, Pyth, Kamino, Squads V4]
-    url: https://github.com/4n0nn43x/meridian
 
   - name: NeuroBase
     what: natural language to verified SQL across four database dialects
