@@ -3,60 +3,41 @@
   <img alt="Nolwen Sean Hononta - engineer building AI agents and onchain systems, x402 payments and ERC-8004 reputation" src="https://raw.githubusercontent.com/4n0nn43x/4n0nn43x/main/assets/header-light.svg" width="100%">
 </picture>
 
-### I build AI agents that are accountable for what they do onchain.
+### I build the infrastructure autonomous agents need to transact onchain.
 
 Payment rails so an agent can pay for what it uses (**x402**, **MPP**), and settlement so it
 answers for the outcome (**ERC-8004**). Solo builds, deployed and running.
 
 [![Website](https://img.shields.io/badge/nolwenhononta.cloud-0b1020?style=for-the-badge&logo=firefox-browser&logoColor=22d3ee)](https://nolwenhononta.cloud)
-[![npm](https://img.shields.io/npm/v/warrant-sdk?style=for-the-badge&label=warrant-sdk&color=7c5cff&logo=npm&logoColor=white)](https://www.npmjs.com/package/warrant-sdk)
+[![npm](https://img.shields.io/npm/v/warrant-sdk?style=for-the-badge&label=warrant--sdk&color=7c5cff&logo=npm&logoColor=white)](https://www.npmjs.com/package/warrant-sdk)
 [![PyPI](https://img.shields.io/pypi/v/warrant-sdk?style=for-the-badge&label=pypi&color=22d3ee&logo=pypi&logoColor=white)](https://pypi.org/project/warrant-sdk/)
 [![X](https://img.shields.io/badge/@0x___eth-0b1020?style=for-the-badge&logo=x&logoColor=white)](https://x.com/0x___eth)
 
 ---
 
-## Warrant — an agent doesn't get permission, it buys a mandate
+## Work
 
-Before a risky onchain action, the agent posts a USDC bond and commits to the post-condition
-its action must produce. An independent read at a pinned block decides. Held, the bond
-returns. Violated, it is seized and the verdict is written to the ERC-8004 Reputation
-Registry.
+**[Aether SDK](https://github.com/AETHER-SDK/aether-sdk)** — Autonomous agent payments on
+Solana. Founder. A TypeScript SDK letting agents negotiate and settle micropayments over
+x402, so a service can charge per call and an agent can pay for it without a human in the
+loop.
 
-The EIP-3009 nonce **is** the hash of the committed terms, so signing the payment is signing
-the mandate. A prompt injection can talk an agent into a transfer. It cannot make the final
-onchain state match a post-condition committed before the poisoned content was read.
-
-Live on Base Sepolia against Circle's real USDC. **60 warrants settled, 50 honored, 10
-slashed, and every one of the 60 verdicts replayed from a clean clone with zero divergences.**
-
-```bash
-pip install warrant-sdk        # or: npm i warrant-sdk
-./scripts/replay-verdict.sh <warrantId> --registry 0x8004b663…8713
-# -> VERDICT REPRODUCED
-```
-
-That last line is the point. It is the one claim on this page you can run yourself to
-contradict me.
-
-**[Code](https://github.com/4n0nn43x/warrant)** · **[Live gateway](https://warrant.fyra.fun)** · **[Demo](https://youtu.be/m94pRdZ3FbQ)**
-
----
-
-## Also worth your time
+**[Warrant](https://github.com/4n0nn43x/warrant)** — Bonded execution for onchain agents.
+An agent posts a USDC bond and commits to the post-condition its action must produce; an
+independent read at a pinned block honors or slashes it and writes the verdict to the
+ERC-8004 Reputation Registry. Live on Base Sepolia: 60 warrants settled, all 60 verdicts
+replayed with zero divergences. [`warrant-sdk`](https://www.npmjs.com/package/warrant-sdk)
+on npm and PyPI.
 
 **[AgentForge](https://github.com/4n0nn43x/agent-forge)** — No-code RAG platform.
 FastAPI, LangChain and ChromaDB behind a public REST API with key-scoped rate limits, an
 embeddable vanilla-JS widget, and HMAC-SHA256 webhooks with exponential-backoff retry.
-**Winner of the DoraHacks × NodeOps Proof of Build hackathon.**
-
-**[Aether SDK](https://github.com/AETHER-SDK/aether-sdk)** — Autonomous agent payments on
-Solana. A TypeScript SDK letting agents negotiate and settle micropayments over x402.
-Founder. The ecosystem around it includes PayGate and an agent-to-agent marketplace.
-Where Warrant makes agents accountable, this is the half that lets them transact at all.
+Winner of the DoraHacks × NodeOps Proof of Build hackathon.
 
 **[Meridian](https://github.com/4n0nn43x/meridian)** — Onchain corporate treasury on Solana.
-An Anchor program with 7 instructions: atomic FX through Jupiter Ultra, Pyth oracle slippage
-verification, auto-sweep into Kamino vaults, Squads V4 multisig, onchain sanction screening.
+An Anchor program with seven instructions: atomic FX through Jupiter Ultra, Pyth oracle
+slippage verification, auto-sweep into Kamino vaults, Squads V4 multisig, onchain sanction
+screening.
 
 **[NeuroBase](https://github.com/4n0nn43x/neurobase)** — Natural language to verified SQL,
 across Postgres, MySQL, SQLite and MongoDB. Permission ladder, per-query cost tracking, and
@@ -65,15 +46,6 @@ no `.env` to fill in. Same prompt, four dialects.
 **[WA-Tunnel](https://github.com/4n0nn43x/wa-tunnel)** — TCP tunnelling over WhatsApp.
 Chunks and brotli-compresses arbitrary TCP traffic through WhatsApp messages at a 6-8x
 message reduction, so a zero-rated or restricted carrier still gives you a network.
-
-<details>
-<summary>Smaller things</summary>
-
-- **[Cortex402](https://github.com/4n0nn43x/cortex402)** — x402 agentic finance on Cronos
-- **[Bittensor Subnet 42 MCP](https://github.com/4n0nn43x/Bittensor-Subnet-42-MCP)** — Masa and Taostats data over MCP
-- **[Bitsec AutoReporter](https://github.com/4n0nn43x/Bitsec-AutoReporter-AI)** — consensus-based vulnerability reporting for the Bitsec subnet
-
-</details>
 
 ---
 
@@ -118,6 +90,11 @@ site: https://nolwenhononta.cloud
 contact: anonnaes@proton.me
 
 projects:
+  - name: Aether SDK
+    what: autonomous agent micropayments on Solana over x402
+    role: founder
+    url: https://github.com/AETHER-SDK/aether-sdk
+
   - name: Warrant
     what: bonded execution for onchain AI agents
     how: agent posts a USDC bond and commits to an onchain post-condition; an
@@ -137,11 +114,6 @@ projects:
     result: winner, DoraHacks x NodeOps Proof of Build hackathon
     url: https://github.com/4n0nn43x/agent-forge
 
-  - name: Aether SDK
-    what: autonomous agent micropayments on Solana over x402
-    role: founder
-    url: https://github.com/AETHER-SDK/aether-sdk
-
   - name: Meridian
     what: onchain corporate treasury on Solana
     stack: [Anchor, Rust, Jupiter, Pyth, Kamino, Squads V4]
@@ -150,6 +122,10 @@ projects:
   - name: NeuroBase
     what: natural language to verified SQL across four database dialects
     url: https://github.com/4n0nn43x/neurobase
+
+  - name: WA-Tunnel
+    what: TCP tunnelling over WhatsApp, 6-8x message reduction via brotli chunking
+    url: https://github.com/4n0nn43x/wa-tunnel
 
 open_to: agent infrastructure, onchain protocols, payment rails
 ```
