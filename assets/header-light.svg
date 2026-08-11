@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="230"
+     viewBox="0 0 1000 230" role="img"
+     aria-label="Nolwen Sean Hononta - AI agents and onchain systems">
+  <title>Nolwen Sean Hononta</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f6f7fb"/>
+      <stop offset="50%" stop-color="#eceffb"/>
+      <stop offset="100%" stop-color="#f9fafe"/>
+      <animate attributeName="x1" values="0;0.4;0" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="y2" values="1;0.6;1" dur="14s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5b3df5"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+
+    <!-- The aurora: two slow blurred blobs. All the life in the banner comes
+         from these, which is why they move on different periods - equal periods
+         would beat in sync and read as a loop. -->
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="46"/>
+    </filter>
+
+    <clipPath id="card"><rect width="1000" height="230" rx="18"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#card)">
+    <rect width="1000" height="230" fill="url(#bg)"/>
+
+    <g filter="url(#soft)" opacity="0.5">
+      <circle cx="180" cy="60" r="120" fill="#5b3df5">
+        <animate attributeName="cx" values="180;340;180" dur="17s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="60;150;60" dur="21s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="820" cy="180" r="110" fill="#0891b2">
+        <animate attributeName="cx" values="820;660;820" dur="23s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="180;70;180" dur="19s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <g opacity="0.55"><defs><pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.1" fill="#d7ddf0"/></pattern></defs><rect width="1000" height="230" fill="url(#grid)" opacity="0.45"/><circle cx="126" cy="44" r="1.6" fill="#d7ddf0"><animate attributeName="opacity" values="0.15;0.85;0.15" dur="5s" begin="0.0s" repeatCount="indefinite"/></circle><circle cx="262" cy="196" r="1.6" fill="#d7ddf0"><animate attributeName="opacity" values="0.15;0.85;0.15" dur="6s" begin="1.3s" repeatCount="indefinite"/></circle><circle cx="398" cy="30" r="1.6" fill="#d7ddf0"><animate attributeName="opacity" values="0.15;0.85;0.15" dur="4.5s" begin="2.1s" repeatCount="indefinite"/></circle><circle cx="534" cy="210" r="1.6" fill="#d7ddf0"><animate attributeName="opacity" values="0.15;0.85;0.15" dur="5.5s" begin="0.7s" repeatCount="indefinite"/></circle><circle cx="676" cy="52" r="1.6" fill="#d7ddf0"><animate attributeName="opacity" values="0.15;0.85;0.15" dur="6.5s" begin="1.9s" repeatCount="indefinite"/></circle><circle cx="742" cy="168" r="1.6" fill="#d7ddf0"><animate attributeName="opacity" values="0.15;0.85;0.15" dur="4.8s" begin="3.0s" repeatCount="indefinite"/></circle><circle cx="868" cy="36" r="1.6" fill="#d7ddf0"><animate attributeName="opacity" values="0.15;0.85;0.15" dur="5.2s" begin="2.4s" repeatCount="indefinite"/></circle><circle cx="930" cy="132" r="1.6" fill="#d7ddf0"><animate attributeName="opacity" values="0.15;0.85;0.15" dur="6.1s" begin="0.4s" repeatCount="indefinite"/></circle><circle cx="612" cy="118" r="1.6" fill="#d7ddf0"><animate attributeName="opacity" values="0.15;0.85;0.15" dur="5.8s" begin="3.4s" repeatCount="indefinite"/></circle></g>
+
+    <text x="58" y="94" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,Helvetica,Arial,sans-serif" font-size="44" font-weight="700"
+          fill="#0d1226" letter-spacing="-0.5">Nolwen Sean Hononta</text>
+
+    <text x="58" y="122" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="13"
+          fill="#5b6488" letter-spacing="2.4">ENGINEER / AI AGENTS / ONCHAIN</text>
+
+    <defs><clipPath id="clip0"><rect x="0" y="0" width="0" height="30"><animate attributeName="width" from="0" to="466.4" dur="1.4s" begin="0.0s" fill="freeze" calcMode="discrete" values="0.0;10.6;21.2;31.8;42.4;53.0;63.6;74.2;84.8;95.4;106.0;116.6;127.2;137.8;148.4;159.0;169.6;180.2;190.8;201.4;212.0;222.6;233.2;243.8;254.4;265.0;275.6;286.2;296.8;307.4;318.0;328.6;339.2;349.8;360.4;371.0;381.6;392.2;402.8;413.4;424.0;434.6;445.2;455.8;466.4"/><animate attributeName="width" from="466.4" to="0" dur="0.5s" begin="3.4s" fill="freeze"/></rect></clipPath></defs><g transform="translate(58,150)" opacity="0"><set attributeName="opacity" to="1" begin="0.0s"/><set attributeName="opacity" to="0" begin="3.9s"/><g clip-path="url(#clip0)"><text x="0" y="19" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="17" fill="#28304f">AI agents that put money behind their claims</text></g><g transform="translate(0,-1)"><rect y="0" width="2" height="24" fill="#0891b2" opacity="0"><set attributeName="opacity" to="1" begin="0.0s"/><set attributeName="opacity" to="0" begin="3.9s"/><animate attributeName="x" from="0" to="466.4" dur="1.4s" begin="0.0s" fill="freeze"/><animate attributeName="x" from="466.4" to="0" dur="0.5s" begin="3.4s" fill="freeze"/><animate attributeName="opacity" values="1;0;1" dur="1s" begin="1.4s" repeatCount="2"/></rect></g></g><defs><clipPath id="clip1"><rect x="0" y="0" width="0" height="30"><animate attributeName="width" from="0" to="455.8" dur="1.4s" begin="3.9s" fill="freeze" calcMode="discrete" values="0.0;10.6;21.2;31.8;42.4;53.0;63.6;74.2;84.8;95.4;106.0;116.6;127.2;137.8;148.4;159.0;169.6;180.2;190.8;201.4;212.0;222.6;233.2;243.8;254.4;265.0;275.6;286.2;296.8;307.4;318.0;328.6;339.2;349.8;360.4;371.0;381.6;392.2;402.8;413.4;424.0;434.6;445.2;455.8"/><animate attributeName="width" from="455.8" to="0" dur="0.5s" begin="7.3s" fill="freeze"/></rect></clipPath></defs><g transform="translate(58,150)" opacity="0"><set attributeName="opacity" to="1" begin="3.9s"/><set attributeName="opacity" to="0" begin="7.8s"/><g clip-path="url(#clip1)"><text x="0" y="19" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="17" fill="#28304f">x402 payments, ERC-8004 reputation, onchain</text></g><g transform="translate(0,-1)"><rect y="0" width="2" height="24" fill="#0891b2" opacity="0"><set attributeName="opacity" to="1" begin="3.9s"/><set attributeName="opacity" to="0" begin="7.8s"/><animate attributeName="x" from="0" to="455.8" dur="1.4s" begin="3.9s" fill="freeze"/><animate attributeName="x" from="455.8" to="0" dur="0.5s" begin="7.3s" fill="freeze"/><animate attributeName="opacity" values="1;0;1" dur="1s" begin="5.3s" repeatCount="2"/></rect></g></g><defs><clipPath id="clip2"><rect x="0" y="0" width="0" height="30"><animate attributeName="width" from="0" to="360.4" dur="1.4s" begin="7.8s" fill="freeze" calcMode="discrete" values="0.0;10.6;21.2;31.8;42.4;53.0;63.6;74.2;84.8;95.4;106.0;116.6;127.2;137.8;148.4;159.0;169.6;180.2;190.8;201.4;212.0;222.6;233.2;243.8;254.4;265.0;275.6;286.2;296.8;307.4;318.0;328.6;339.2;349.8;360.4"/><animate attributeName="width" from="360.4" to="0" dur="0.5s" begin="11.2s" fill="freeze"/></rect></clipPath></defs><g transform="translate(58,150)" opacity="0"><set attributeName="opacity" to="1" begin="7.8s"/><set attributeName="opacity" to="0" begin="11.7s"/><g clip-path="url(#clip2)"><text x="0" y="19" font-family="ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace" font-size="17" fill="#28304f">solo builds, shipped to production</text></g><g transform="translate(0,-1)"><rect y="0" width="2" height="24" fill="#0891b2" opacity="0"><set attributeName="opacity" to="1" begin="7.8s"/><set attributeName="opacity" to="0" begin="11.7s"/><animate attributeName="x" from="0" to="360.4" dur="1.4s" begin="7.8s" fill="freeze"/><animate attributeName="x" from="360.4" to="0" dur="0.5s" begin="11.2s" fill="freeze"/><animate attributeName="opacity" values="1;0;1" dur="1s" begin="9.2s" repeatCount="2"/></rect></g></g>
+
+    <!-- Accent rule, drawn once on load rather than looping: the eye should
+         settle on the typing, not on a second thing competing with it. -->
+    <rect x="58" y="196" width="0" height="3" rx="1.5" fill="url(#accent)">
+      <animate attributeName="width" from="0" to="240" dur="1.1s" fill="freeze"/>
+    </rect>
+  </g>
+</svg>
