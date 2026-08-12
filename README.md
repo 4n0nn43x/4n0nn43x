@@ -8,10 +8,10 @@
 Payment rails so an agent can pay for what it uses (**x402**, **MPP**), and settlement so it
 answers for the outcome (**ERC-8004**). Solo builds, deployed and running.
 
-[![Website](https://img.shields.io/badge/nolwenhononta.cloud-0b1020?style=for-the-badge&logo=firefox-browser&logoColor=22d3ee)](https://nolwenhononta.cloud)
-[![npm](https://img.shields.io/npm/v/warrant-sdk?style=for-the-badge&label=warrant--sdk&color=7c5cff&logo=npm&logoColor=white)](https://www.npmjs.com/package/warrant-sdk)
-[![PyPI](https://img.shields.io/pypi/v/warrant-sdk?style=for-the-badge&label=pypi&color=22d3ee&logo=pypi&logoColor=white)](https://pypi.org/project/warrant-sdk/)
-[![X](https://img.shields.io/badge/@0x___eth-0b1020?style=for-the-badge&logo=x&logoColor=white)](https://x.com/0x___eth)
+[![Website](https://img.shields.io/badge/nolwenhononta.cloud-16130F?style=flat-square&labelColor=16130F&color=16130F&logo=firefox-browser&logoColor=C9962B)](https://nolwenhononta.cloud)
+[![npm](https://img.shields.io/npm/v/warrant-sdk?style=flat-square&label=npm%20warrant-sdk&labelColor=16130F&color=C9962B&logo=npm&logoColor=E6DFD3)](https://www.npmjs.com/package/warrant-sdk)
+[![PyPI](https://img.shields.io/pypi/v/warrant-sdk?style=flat-square&label=pypi&labelColor=16130F&color=C9962B&logo=pypi&logoColor=E6DFD3)](https://pypi.org/project/warrant-sdk/)
+[![X](https://img.shields.io/badge/@0x___eth-16130F?style=flat-square&labelColor=16130F&color=16130F&logo=x&logoColor=E6DFD3)](https://x.com/0x___eth)
 
 ---
 
@@ -48,7 +48,7 @@ message reduction, so a zero-rated or restricted carrier still gives you a netwo
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/4n0nn43x/4n0nn43x/main/assets/stack-dark.svg">
-  <img alt="Languages: TypeScript, Python, Rust, Solidity. Agent rails: x402 v2, MPP, ERC-8004, MCP, LangChain, CrewAI. Onchain: Base, Solana, viem, Foundry, Anchor. Backend: Node.js, FastAPI, PostgreSQL, ChromaDB. Interfaces: React, Vite, vanilla HTML/CSS, embeddable widgets. Supply chain: cosign, SBOM, provenance, GHCR, Docker." src="https://raw.githubusercontent.com/4n0nn43x/4n0nn43x/main/assets/stack-light.svg" width="100%">
+  <img alt="Languages: TypeScript, Python, Rust, Solidity. Agent rails: x402 v2, MPP, ERC-8004, MCP, LangChain, CrewAI. Onchain: Base, Solana, viem, Foundry, Anchor. Backend: Node.js, FastAPI, PostgreSQL, ChromaDB. Interfaces: React, Vite, hand-written HTML/CSS, embeddable widgets. Supply chain: cosign, SBOM, provenance, GHCR, Docker." src="https://raw.githubusercontent.com/4n0nn43x/4n0nn43x/main/assets/stack-light.svg" width="100%">
 </picture>
 
 ---

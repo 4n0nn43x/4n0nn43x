@@ -1,33 +1,59 @@
-"""Palettes and type stacks, shared by every asset generator here.
+"""Palette and type, shared by every asset generator here.
 
-Extracted the moment a second generator appeared. Two files each holding their
-own copy of the same six hex values is a drift waiting to happen: the header
-would be edited, the stack panel would not, and the profile would show two
-palettes that are nearly-but-not-quite the same - the kind of wrongness a reader
-feels without being able to name.
+Direction: a settlement record, not a hero banner.
+
+The first pass of this profile went straight to the house style of machine-made
+design - purple-to-cyan gradient, blurred aurora blobs, a dot grid, rounded
+cards with an accent rail, content in pills. Every one of those is on the list
+of things that read as generated, and using three of them at once is why the
+result looked like every other page.
+
+So the vocabulary here comes from the subject instead. The work is bonded
+execution: an agent signs a commitment, money is held against it, and a verdict
+is recorded. That world has a visual language already - labelled fields, hairline
+rules, values set in a face that keeps its columns, one seal. Square corners,
+because a document has square corners.
+
+Brass rather than an accent hue: it is the colour of a seal and of a coin, it is
+warm without being the terracotta every generated page reaches for, and there is
+exactly one of it per asset.
 """
 
 THEMES = {
     "dark": {
-        "bg0": "#0b1020", "bg1": "#131a33", "bg2": "#0d1226",
-        "name": "#f2f5ff", "accent0": "#7c5cff", "accent1": "#22d3ee",
-        "muted": "#8b94b8", "dot": "#2a3358", "type": "#c9d2f5",
-        "pill": "#1a2244", "pillText": "#d7ddf5", "pillEdge": "#2f3a66",
+        "ground": "#16130F",     # warm ink, not slate, not GitHub's #0d1117
+        "field": "#1E1A15",      # raised surface, barely
+        "rule": "#3A3229",       # hairlines
+        "ruleSoft": "#2A241D",
+        "text": "#E6DFD3",       # warm bone
+        "muted": "#9A8F7F",
+        "faint": "#5E564A",
+        "brass": "#C9962B",
     },
     "light": {
-        "bg0": "#f6f7fb", "bg1": "#eceffb", "bg2": "#f9fafe",
-        "name": "#0d1226", "accent0": "#5b3df5", "accent1": "#0891b2",
-        "muted": "#5b6488", "dot": "#d7ddf0", "type": "#28304f",
-        "pill": "#ffffff", "pillText": "#2b3350", "pillEdge": "#dbe1f2",
+        "ground": "#EFEDE6",
+        "field": "#E7E4DA",
+        "rule": "#CFC9BB",
+        "ruleSoft": "#DEDACE",
+        "text": "#1A1712",
+        "muted": "#6B6254",
+        "faint": "#A79D8C",
+        "brass": "#9A6E12",      # darkened so it holds on paper
     },
 }
 
+# System stacks. A webfont cannot be linked from an SVG that GitHub serves
+# through its image proxy, and embedding a face as base64 would cost more bytes
+# than the whole asset. The personality has to come from scale, weight and
+# spacing instead of from an exotic family - which is the harder discipline and
+# the one that survives on someone else's machine.
 MONO = "ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace"
-SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,Helvetica,Arial,sans-serif"
+SANS = ("Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,"
+        "'Helvetica Neue',Arial,sans-serif")
+
+MONO_ADV = 0.601   # advance per char, as a fraction of font-size, for the stack above
 
 
 def esc(text: str) -> str:
     """XML-escape. `C++` and `A & B` would otherwise produce invalid SVG."""
-    return (
-        text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
-    )
+    return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")

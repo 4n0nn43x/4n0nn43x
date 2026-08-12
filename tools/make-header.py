@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Generate the animated profile header, once per theme.
+"""Generate the profile header, once per theme.
 
-Why a generator and not two hand-written SVGs: the dark and light headers are
-the same drawing with a different palette, and two hand-maintained copies drift
-the moment one is edited. Here the geometry and the timing exist once.
+Laid out as a record rather than a banner: the name as the party, a rule, then
+labelled fields underneath. Left-aligned, square-cornered, one brass line.
 
-Why SMIL rather than CSS keyframes: GitHub serves README images through its
-camo proxy, which hands the browser the raw bytes as an image. SVG rendered as
-an image runs SMIL reliably everywhere; CSS animation support inside
-image-context SVG is the part that varies between renderers.
+The motion is deliberately small. Everything settles in once on load, and the
+only thing that keeps moving afterwards is the FOCUS value, which cycles through
+three positions the way a field updates rather than the way a terminal types.
+A profile with several things looping is how a page starts feeling automated -
+one moving element reads as considered, four read as a template.
 
 Run:  python3 tools/make-header.py
 """
@@ -17,161 +17,125 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from theme import MONO, SANS, THEMES  # noqa: E402
+from theme import MONO, MONO_ADV, SANS, THEMES, esc  # noqa: E402
 
-# Three phrases, typed then erased, forever. Keep them short: the caret has to
-# land inside the banner at the widest phrase, not past its edge.
-PHRASES = [
-    "AI agents that put money behind their claims",
-    "x402 payments, ERC-8004 reputation, onchain",
-    "solo builds, shipped to production",
+NAME = "Nolwen Sean Hononta"
+REF = "github.com/4n0nn43x"
+
+# The FOCUS field cycles. Three values, each held long enough to read twice.
+FOCUS = [
+    "agent payment rails - x402 v2, MPP",
+    "onchain settlement - ERC-8004 verdicts",
+    "solo builds, shipped and running",
 ]
+HOLD = 3.6
+FADE = 0.45
+SLOT = HOLD + FADE
+CYCLE = SLOT * len(FOCUS)
 
-TYPE_S = 1.4   # typing
-HOLD_S = 2.0   # phrase fully visible
-ERASE_S = 0.5  # erasing
-SLOT = TYPE_S + HOLD_S + ERASE_S
-CYCLE = SLOT * len(PHRASES)
+W, H = 1000, 218
+PAD = 52
+BASE_NAME = 96          # baseline of the name
+RULE_Y = 124
+FIELD_Y = 158           # baseline of the field labels
+VALUE_Y = 186           # baseline of the field values
 
-W, H = 1000, 230
 
-def dots(colour: str) -> str:
-    """A faint dot grid, plus a few that breathe.
-
-    The grid is a `<pattern>` rather than ~170 `<circle>` elements: tiled once
-    by the renderer instead of animated individually. The first version drew
-    every dot and animated each one, which cost 36 kB and put 170 concurrent
-    SMIL timelines on screen for an effect nobody consciously sees. Nine
-    hand-placed dots carry the same impression of life.
-    """
-    breathing = "".join(
-        f'<circle cx="{x}" cy="{y}" r="1.6" fill="{colour}">'
-        f'<animate attributeName="opacity" values="0.15;0.85;0.15" '
-        f'dur="{dur}s" begin="{begin}s" repeatCount="indefinite"/></circle>'
-        for x, y, dur, begin in (
-            (126, 44, 5, 0.0), (262, 196, 6, 1.3), (398, 30, 4.5, 2.1),
-            (534, 210, 5.5, 0.7), (676, 52, 6.5, 1.9), (742, 168, 4.8, 3.0),
-            (868, 36, 5.2, 2.4), (930, 132, 6.1, 0.4), (612, 118, 5.8, 3.4),
-        )
-    )
+def field(x: int, label: str, value: str, t: dict, delay: float, mono: bool = True) -> str:
+    """A labelled field: small tracked-out label, value beneath it."""
+    face = MONO if mono else SANS
     return (
-        f'<defs><pattern id="grid" width="34" height="34" patternUnits="userSpaceOnUse">'
-        f'<circle cx="2" cy="2" r="1.1" fill="{colour}"/></pattern></defs>'
-        f'<rect width="{W}" height="{H}" fill="url(#grid)" opacity="0.45"/>'
-        f'{breathing}'
-    )
-
-
-def typed_line(index: int, text: str, t: dict) -> str:
-    """One phrase: revealed by a clip rect, erased the same way, then silent.
-
-    Each phrase owns a slot in the loop and is invisible outside it, so all
-    three can share the same baseline without ever overlapping.
-    """
-    start = index * SLOT
-    char_w = 10.6           # 17px monospace, measured rather than guessed
-    full = len(text) * char_w
-    cid = f"clip{index}"
-
-    # Visible only during its own slot.
-    vis = (
-        f'<set attributeName="opacity" to="1" begin="{start}s"/>'
-        f'<set attributeName="opacity" to="0" begin="{start + SLOT}s"/>'
-    )
-
-    reveal = (
-        f'<animate attributeName="width" from="0" to="{full}" dur="{TYPE_S}s" '
-        f'begin="{start}s" fill="freeze" calcMode="discrete" '
-        f'values="{";".join(str(round(full * i / len(text), 1)) for i in range(len(text) + 1))}"/>'
-        f'<animate attributeName="width" from="{full}" to="0" dur="{ERASE_S}s" '
-        f'begin="{start + TYPE_S + HOLD_S}s" fill="freeze"/>'
-    )
-
-    # The caret rides the end of the revealed span, then blinks while holding.
-    caret = (
-        f'<rect y="0" width="2" height="24" fill="{t["accent1"]}" opacity="0">'
-        f'{vis}'
-        f'<animate attributeName="x" from="0" to="{full}" dur="{TYPE_S}s" '
-        f'begin="{start}s" fill="freeze"/>'
-        f'<animate attributeName="x" from="{full}" to="0" dur="{ERASE_S}s" '
-        f'begin="{start + TYPE_S + HOLD_S}s" fill="freeze"/>'
-        f'<animate attributeName="opacity" values="1;0;1" dur="1s" '
-        f'begin="{start + TYPE_S}s" repeatCount="{int(HOLD_S)}"/>'
-        f'</rect>'
-    )
-
-    return (
-        f'<defs><clipPath id="{cid}"><rect x="0" y="0" width="0" height="30">'
-        f'{reveal}</rect></clipPath></defs>'
-        f'<g transform="translate(58,150)" opacity="0">{vis}'
-        f'<g clip-path="url(#{cid})">'
-        f'<text x="0" y="19" font-family="{MONO}" font-size="17" '
-        f'fill="{t["type"]}">{text}</text></g>'
-        f'<g transform="translate(0,-1)">{caret}</g>'
+        f'<g opacity="1">'
+        f'<animate attributeName="opacity" from="0" to="1" dur="0.5s" '
+        f'begin="{delay:.2f}s" fill="freeze"/>'
+        f'<text x="{x}" y="{FIELD_Y}" font-family="{MONO}" font-size="10.5" '
+        f'letter-spacing="2.6" fill="{t["faint"]}">{esc(label)}</text>'
+        f'<text x="{x}" y="{VALUE_Y}" font-family="{face}" font-size="14.5" '
+        f'fill="{t["muted"]}">{esc(value)}</text>'
         f'</g>'
     )
 
 
+def focus_field(x: int, t: dict) -> str:
+    """The one element that keeps moving: a field whose value is replaced.
+
+    Each value owns a slot in one indefinitely-repeating cycle rather than
+    being scheduled with `begin` offsets. Offsets fire once: an earlier draft of
+    this file used them and the line went permanently blank after twelve
+    seconds, which only surfaced in a screenshot of the live profile.
+    """
+    parts = [
+        f'<text x="{x}" y="{FIELD_Y}" font-family="{MONO}" font-size="10.5" '
+        f'letter-spacing="2.6" fill="{t["faint"]}">FOCUS'
+        f'<animate attributeName="opacity" from="0" to="1" dur="0.5s" '
+        f'begin="0.55s" fill="freeze"/></text>'
+    ]
+    for i, value in enumerate(FOCUS):
+        start = i * SLOT
+        keys = ";".join(
+            f"{v:.5f}" for v in (
+                0, start / CYCLE, (start + FADE) / CYCLE,
+                (start + HOLD) / CYCLE, (start + SLOT) / CYCLE, 1,
+            )
+        )
+        # The first value is up from the first frame, not after the first fade:
+        # a field that reads empty for half a second on every load looks broken,
+        # and it is the state most screenshots and previews will catch.
+        vals = "1;1;1;1;0;0" if i == 0 else "0;0;1;1;0;0"
+        parts.append(
+            f'<text x="{x}" y="{VALUE_Y}" font-family="{MONO}" font-size="14.5" '
+            f'fill="{t["text"]}" opacity="{1 if i == 0 else 0}">{esc(value)}'
+            f'<animate attributeName="opacity" dur="{CYCLE}s" repeatCount="indefinite" '
+            f'values="{vals}" keyTimes="{keys}"/></text>'
+        )
+    return "".join(parts)
+
+
 def build(theme: str) -> str:
     t = THEMES[theme]
+    right = W - PAD
+
+    # Status field is right-aligned against the same rule the name sits on, so
+    # the two ends of the document line up rather than drifting.
+    status = (
+        f'<g opacity="1">'
+        f'<animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.85s" fill="freeze"/>'
+        f'<text x="{right}" y="{FIELD_Y}" text-anchor="end" font-family="{MONO}" '
+        f'font-size="10.5" letter-spacing="2.6" fill="{t["faint"]}">STATUS</text>'
+        f'<text x="{right}" y="{VALUE_Y}" text-anchor="end" font-family="{MONO}" '
+        f'font-size="14.5" fill="{t["text"]}">open to work</text>'
+        f'<circle cx="{right - 128}" cy="{VALUE_Y - 5}" r="3.5" fill="{t["brass"]}">'
+        f'<animate attributeName="opacity" values="1;0.25;1" dur="2.6s" '
+        f'repeatCount="indefinite"/></circle>'
+        f'</g>'
+    )
+
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}"
      viewBox="0 0 {W} {H}" role="img"
-     aria-label="Nolwen Sean Hononta - AI agents and onchain systems">
+     aria-label="Nolwen Sean Hononta, engineer. Focus: agent payment rails, x402 and MPP; onchain settlement and ERC-8004 verdicts. Status: open to work.">
   <title>Nolwen Sean Hononta</title>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="{t['bg0']}"/>
-      <stop offset="50%" stop-color="{t['bg1']}"/>
-      <stop offset="100%" stop-color="{t['bg2']}"/>
-      <animate attributeName="x1" values="0;0.4;0" dur="14s" repeatCount="indefinite"/>
-      <animate attributeName="y2" values="1;0.6;1" dur="14s" repeatCount="indefinite"/>
-    </linearGradient>
 
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="{t['accent0']}"/>
-      <stop offset="100%" stop-color="{t['accent1']}"/>
-    </linearGradient>
+  <rect width="{W}" height="{H}" fill="{t['ground']}"/>
 
-    <!-- The aurora: two slow blurred blobs. All the life in the banner comes
-         from these, which is why they move on different periods - equal periods
-         would beat in sync and read as a loop. -->
-    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur stdDeviation="46"/>
-    </filter>
+  <!-- The brass edge. One accent in the whole asset, and it is a margin rule
+       rather than a decorative rail: it marks where the document begins. -->
+  <rect x="0" y="0" width="4" height="{H}" fill="{t['brass']}">
+    <animate attributeName="opacity" values="0;1" dur="0.6s" fill="freeze"/>
+  </rect>
 
-    <clipPath id="card"><rect width="{W}" height="{H}" rx="18"/></clipPath>
-  </defs>
+  <text x="{PAD}" y="{BASE_NAME}" font-family="{SANS}" font-size="52"
+        font-weight="800" letter-spacing="-1.6" fill="{t['text']}">{esc(NAME)}</text>
 
-  <g clip-path="url(#card)">
-    <rect width="{W}" height="{H}" fill="url(#bg)"/>
+  <!-- The rule draws once, left to right, and then the page is still. -->
+  <rect x="{PAD}" y="{RULE_Y}" width="{W - PAD * 2}" height="1" fill="{t['rule']}">
+    <animate attributeName="width" from="0" to="{W - PAD * 2}" dur="0.9s"
+             fill="freeze" calcMode="linear"
+             values="0;{W - PAD * 2};{W - PAD * 2}" keyTimes="0;0.6;1"/>
+  </rect>
 
-    <g filter="url(#soft)" opacity="0.5">
-      <circle cx="180" cy="60" r="120" fill="{t['accent0']}">
-        <animate attributeName="cx" values="180;340;180" dur="17s" repeatCount="indefinite"/>
-        <animate attributeName="cy" values="60;150;60" dur="21s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="820" cy="180" r="110" fill="{t['accent1']}">
-        <animate attributeName="cx" values="820;660;820" dur="23s" repeatCount="indefinite"/>
-        <animate attributeName="cy" values="180;70;180" dur="19s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-
-    <g opacity="0.55">{dots(t['dot'])}</g>
-
-    <text x="58" y="94" font-family="{SANS}" font-size="44" font-weight="700"
-          fill="{t['name']}" letter-spacing="-0.5">Nolwen Sean Hononta</text>
-
-    <text x="58" y="122" font-family="{MONO}" font-size="13"
-          fill="{t['muted']}" letter-spacing="2.4">ENGINEER / AI AGENTS / ONCHAIN</text>
-
-    {"".join(typed_line(i, p, t) for i, p in enumerate(PHRASES))}
-
-    <!-- Accent rule, drawn once on load rather than looping: the eye should
-         settle on the typing, not on a second thing competing with it. -->
-    <rect x="58" y="196" width="0" height="3" rx="1.5" fill="url(#accent)">
-      <animate attributeName="width" from="0" to="240" dur="1.1s" fill="freeze"/>
-    </rect>
-  </g>
+  {field(PAD, "REF", REF, t, 0.35)}
+  {focus_field(PAD + 250, t)}
+  {status}
 </svg>
 """
 
@@ -182,8 +146,13 @@ def main() -> None:
     for theme in THEMES:
         path = out / f"header-{theme}.svg"
         path.write_text(build(theme), encoding="utf-8")
-        print(f"  wrote {path.relative_to(path.parent.parent)} ({path.stat().st_size // 1024} kB)")
-    print(f"  loop: {CYCLE:.1f}s over {len(PHRASES)} phrases")
+        print(f"  wrote assets/{path.name} ({path.stat().st_size / 1024:.1f} kB)")
+
+    widest = max(len(v) for v in FOCUS) * 14.5 * MONO_ADV
+    end = PAD + 250 + widest
+    print(f"  FOCUS cycle {CYCLE:.1f}s; widest value ends at {end:.0f}px of {W}")
+    if end > W - PAD - 150:
+        raise SystemExit("FOCUS value collides with the STATUS column")
 
 
 if __name__ == "__main__":
