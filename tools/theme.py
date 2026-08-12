@@ -17,27 +17,33 @@ because a document has square corners.
 Brass rather than an accent hue: it is the colour of a seal and of a coin, it is
 warm without being the terracotta every generated page reaches for, and there is
 exactly one of it per asset.
+
+Contrast is a constraint here, not an afterthought. The first version of this
+palette put the field labels at 2.56:1 on the dark ground - below the floor even
+for large text, at 10.5px. Every text tone below now clears 4.5:1 against its own
+ground, checked in both themes; the hairlines sit deliberately under that because
+a rule that meets text contrast stops being a hairline and starts being a border.
 """
 
 THEMES = {
     "dark": {
         "ground": "#16130F",     # warm ink, not slate, not GitHub's #0d1117
         "field": "#1E1A15",      # raised surface, barely
-        "rule": "#3A3229",       # hairlines
-        "ruleSoft": "#2A241D",
+        "rule": "#554B3F",       # hairlines
+        "ruleSoft": "#453C31",
         "text": "#E6DFD3",       # warm bone
-        "muted": "#9A8F7F",
-        "faint": "#5E564A",
+        "muted": "#B8AC99",
+        "faint": "#8A8070",
         "brass": "#C9962B",
     },
     "light": {
         "ground": "#EFEDE6",
         "field": "#E7E4DA",
-        "rule": "#CFC9BB",
-        "ruleSoft": "#DEDACE",
+        "rule": "#BDB5A3",
+        "ruleSoft": "#CFC7B6",
         "text": "#1A1712",
-        "muted": "#6B6254",
-        "faint": "#A79D8C",
+        "muted": "#4F4739",
+        "faint": "#6B6254",
         "brass": "#9A6E12",      # darkened so it holds on paper
     },
 }
