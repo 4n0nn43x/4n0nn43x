@@ -24,9 +24,9 @@ REF = "github.com/4n0nn43x"
 
 # The FOCUS field cycles. Three values, each held long enough to read twice.
 FOCUS = [
+    "fullstack - interface, API, chain",
     "agent payment rails - x402 v2, MPP",
     "onchain settlement - ERC-8004 verdicts",
-    "solo builds, shipped and running",
 ]
 HOLD = 3.6
 FADE = 0.45
@@ -112,7 +112,7 @@ def build(theme: str) -> str:
 
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}"
      viewBox="0 0 {W} {H}" role="img"
-     aria-label="Nolwen Sean Hononta, engineer. Focus: agent payment rails, x402 and MPP; onchain settlement and ERC-8004 verdicts. Status: open to work.">
+     aria-label="Nolwen Sean Hononta, fullstack engineer. Focus: fullstack product work from interface to chain; agent payment rails, x402 and MPP; onchain settlement and ERC-8004 verdicts. Status: open to work.">
   <title>Nolwen Sean Hononta</title>
 
   <rect width="{W}" height="{H}" fill="{t['ground']}"/>

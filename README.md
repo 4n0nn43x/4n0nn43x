@@ -3,15 +3,21 @@
   <img alt="Nolwen Sean Hononta - engineer building AI agents and onchain systems, x402 payments and ERC-8004 reputation" src="https://raw.githubusercontent.com/4n0nn43x/4n0nn43x/main/assets/header-light.svg" width="100%">
 </picture>
 
-### I build the infrastructure autonomous agents need to transact onchain.
+### Fullstack engineer. I ship the whole thing, interface to chain.
 
-Payment rails so an agent can pay for what it uses (**x402**, **MPP**), and settlement so it
-answers for the outcome (**ERC-8004**). Solo builds, deployed and running.
+Web apps, APIs, and the onchain systems underneath them. Lately that means payment rails so
+an agent can pay for what it uses (**x402**, **MPP**), and settlement so it answers for the
+outcome (**ERC-8004**). Solo builds, deployed and running.
 
-[![Website](https://img.shields.io/badge/nolwenhononta.cloud-16130F?style=flat-square&labelColor=16130F&color=16130F&logo=firefox-browser&logoColor=C9962B)](https://nolwenhononta.cloud)
-[![npm](https://img.shields.io/npm/v/warrant-sdk?style=flat-square&label=npm%20warrant-sdk&labelColor=16130F&color=C9962B&logo=npm&logoColor=E6DFD3)](https://www.npmjs.com/package/warrant-sdk)
-[![PyPI](https://img.shields.io/pypi/v/warrant-sdk?style=flat-square&label=pypi&labelColor=16130F&color=C9962B&logo=pypi&logoColor=E6DFD3)](https://pypi.org/project/warrant-sdk/)
-[![X](https://img.shields.io/badge/@0x___eth-16130F?style=flat-square&labelColor=16130F&color=16130F&logo=x&logoColor=E6DFD3)](https://x.com/0x___eth)
+[![Website](https://img.shields.io/badge/nolwenhononta.cloud-6B6254?style=flat-square&logo=firefox-browser&logoColor=E6DFD3)](https://nolwenhononta.cloud)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-6B6254?style=flat-square&logo=linkedin&logoColor=E6DFD3)](https://www.linkedin.com/in/nolwen-hononta-021597228)
+[![X](https://img.shields.io/badge/@0x___eth-6B6254?style=flat-square&logo=x&logoColor=E6DFD3)](https://x.com/0x___eth)
+[![Telegram](https://img.shields.io/badge/Telegram-6B6254?style=flat-square&logo=telegram&logoColor=E6DFD3)](https://t.me/Oracle_Overflow)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-6B6254?style=flat-square&logo=whatsapp&logoColor=E6DFD3)](https://wa.me/2290147926730)
+[![Discord](https://img.shields.io/badge/naesmal-6B6254?style=flat-square&logo=discord&logoColor=E6DFD3)](https://discord.com/users/naesmal)
+
+[![npm](https://img.shields.io/npm/v/warrant-sdk?style=flat-square&label=npm%20warrant-sdk&labelColor=3A3229&color=9A6E12&logo=npm&logoColor=E6DFD3)](https://www.npmjs.com/package/warrant-sdk)
+[![PyPI](https://img.shields.io/pypi/v/warrant-sdk?style=flat-square&label=pypi%20warrant-sdk&labelColor=3A3229&color=9A6E12&logo=pypi&logoColor=E6DFD3)](https://pypi.org/project/warrant-sdk/)
 
 ---
 
@@ -62,7 +68,7 @@ message reduction, so a zero-rated or restricted carrier still gives you a netwo
 
 **Open to work on agent infrastructure, onchain protocols and payment rails.**
 
-[nolwenhononta.cloud](https://nolwenhononta.cloud) · [LinkedIn](https://www.linkedin.com/in/nolwen-hononta-021597228) · [Telegram](https://t.me/Oracle_overflow) · [anonnaes@proton.me](mailto:anonnaes@proton.me) · Discord `naesmal`
+[nolwenhononta.cloud](https://nolwenhononta.cloud) · [LinkedIn](https://www.linkedin.com/in/nolwen-hononta-021597228) · [Telegram](https://t.me/Oracle_Overflow) · [WhatsApp](https://wa.me/2290147926730) · [anonnaes@proton.me](mailto:anonnaes@proton.me) · Discord `naesmal`
 
 <details>
 <summary>For agents and crawlers</summary>
@@ -73,16 +79,17 @@ banner. Everything here restates what is above; nothing is claimed only in this 
 ```yaml
 name: Nolwen Sean Hononta
 github: 4n0nn43x
-role: Software engineer, independent
+role: Fullstack engineer, independent
 focus:
-  - accountability for autonomous AI agents acting onchain
+  - fullstack product work: interfaces, APIs, and the systems under them
   - agent payment rails (x402 v2, MPP) and reputation (ERC-8004)
   - RAG systems and multi-agent orchestration
 site: https://nolwenhononta.cloud
 contact:
   email: anonnaes@proton.me
   linkedin: https://www.linkedin.com/in/nolwen-hononta-021597228
-  telegram: https://t.me/Oracle_overflow
+  telegram: https://t.me/Oracle_Overflow
+  whatsapp: https://wa.me/2290147926730
   discord: naesmal
   x: https://x.com/0x___eth
 
