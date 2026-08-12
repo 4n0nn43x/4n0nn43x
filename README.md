@@ -61,7 +61,8 @@ message reduction, so a zero-rated or restricted carrier still gives you a netwo
 ---
 
 **Open to work on agent infrastructure, onchain protocols and payment rails.**
-[nolwenhononta.cloud](https://nolwenhononta.cloud) · [anonnaes@proton.me](mailto:anonnaes@proton.me) · [Telegram](https://t.me/Oracle_overflow)
+
+[nolwenhononta.cloud](https://nolwenhononta.cloud) · [LinkedIn](https://www.linkedin.com/in/nolwen-hononta-021597228) · [Telegram](https://t.me/Oracle_overflow) · [anonnaes@proton.me](mailto:anonnaes@proton.me) · Discord `naesmal`
 
 <details>
 <summary>For agents and crawlers</summary>
@@ -78,7 +79,12 @@ focus:
   - agent payment rails (x402 v2, MPP) and reputation (ERC-8004)
   - RAG systems and multi-agent orchestration
 site: https://nolwenhononta.cloud
-contact: anonnaes@proton.me
+contact:
+  email: anonnaes@proton.me
+  linkedin: https://www.linkedin.com/in/nolwen-hononta-021597228
+  telegram: https://t.me/Oracle_overflow
+  discord: naesmal
+  x: https://x.com/0x___eth
 
 projects:
   - name: Aether SDK
