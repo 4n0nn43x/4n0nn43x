@@ -13,7 +13,11 @@ image-context SVG is the part that varies between renderers.
 Run:  python3 tools/make-header.py
 """
 
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from theme import MONO, SANS, THEMES  # noqa: E402
 
 # Three phrases, typed then erased, forever. Keep them short: the caret has to
 # land inside the banner at the widest phrase, not past its edge.
@@ -30,23 +34,6 @@ SLOT = TYPE_S + HOLD_S + ERASE_S
 CYCLE = SLOT * len(PHRASES)
 
 W, H = 1000, 230
-
-THEMES = {
-    "dark": {
-        "bg0": "#0b1020", "bg1": "#131a33", "bg2": "#0d1226",
-        "name": "#f2f5ff", "accent0": "#7c5cff", "accent1": "#22d3ee",
-        "muted": "#8b94b8", "dot": "#2a3358", "type": "#c9d2f5",
-    },
-    "light": {
-        "bg0": "#f6f7fb", "bg1": "#eceffb", "bg2": "#f9fafe",
-        "name": "#0d1226", "accent0": "#5b3df5", "accent1": "#0891b2",
-        "muted": "#5b6488", "dot": "#d7ddf0", "type": "#28304f",
-    },
-}
-
-MONO = "ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,'Liberation Mono',monospace"
-SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,Roboto,Helvetica,Arial,sans-serif"
-
 
 def dots(colour: str) -> str:
     """A faint dot grid, plus a few that breathe.

@@ -46,14 +46,10 @@ message reduction, so a zero-rated or restricted carrier still gives you a netwo
 
 ## Stack
 
-| | |
-| :-- | :-- |
-| **Languages** | TypeScript, Python, Rust, Solidity |
-| **Onchain** | EVM (Base, HashKey), Solana, viem, ethers, Foundry, Anchor |
-| **Agent rails** | x402 v2, MPP, ERC-8004, MCP servers, LangChain, CrewAI |
-| **Backend** | Node.js, FastAPI, Express, PostgreSQL, ChromaDB |
-| **Supply chain** | cosign keyless signing, CycloneDX SBOM, provenance attestation, GHCR |
-| **Infra** | Docker, Nginx, Cloudflare, Linux |
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/4n0nn43x/4n0nn43x/main/assets/stack-dark.svg">
+  <img alt="Languages: TypeScript, Python, Rust, Solidity. Agent rails: x402 v2, MPP, ERC-8004, MCP, LangChain, CrewAI. Onchain: Base, Solana, viem, Foundry, Anchor. Backend: Node.js, FastAPI, PostgreSQL, ChromaDB. Interfaces: React, Vite, vanilla HTML/CSS, embeddable widgets. Supply chain: cosign, SBOM, provenance, GHCR, Docker." src="https://raw.githubusercontent.com/4n0nn43x/4n0nn43x/main/assets/stack-light.svg" width="100%">
+</picture>
 
 ---
 
